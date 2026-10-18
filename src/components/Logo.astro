@@ -1,0 +1,119 @@
+---
+interface Props {
+  variant?: 'header' | 'footer' | 'large';
+  class?: string;
+}
+
+const { variant = 'header', class: className = '' } = Astro.props;
+---
+
+<a href="/" class={`brand-logo brand-logo--${variant} ${className}`} aria-label="Mitra 88 Supply - Beranda">
+  <div class="brand-logo__mark" aria-hidden="true">
+    <svg viewBox="0 0 42 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-logo__svg">
+      <!-- Inverted faceted geometric triangle mark -->
+      <polygon points="0,2 21,36 14,2" fill="#1e293b" />
+      <polygon points="14,2 21,36 42,2" fill="#dc2626" />
+      <polygon points="0,2 21,36 42,2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.5" />
+    </svg>
+  </div>
+  <div class="brand-logo__text">
+    <span class="brand-logo__name">MITRA88 SUPPLY</span>
+    <span class="brand-logo__tagline">RESELLER & APPLICATOR</span>
+    <span class="brand-logo__sub">ACOUSTIC CEILING &bull; METAL CEILING &bull; GYPSUM</span>
+  </div>
+</a>
+
+<style>
+  .brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    line-height: 1.15;
+    transition: opacity 0.2s ease;
+    user-select: none;
+  }
+
+  .brand-logo:hover {
+    opacity: 0.92;
+  }
+
+  .brand-logo__mark {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-logo__svg {
+    width: 38px;
+    height: 32px;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+  }
+
+  .brand-logo--large .brand-logo__svg {
+    width: 52px;
+    height: 44px;
+  }
+
+  .brand-logo__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-logo__name {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-weight: 900;
+    font-size: 1.22rem;
+    letter-spacing: 0.03em;
+    color: #0f172a;
+    line-height: 1.1;
+  }
+
+  .brand-logo__tagline {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-weight: 800;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: #dc2626;
+    text-transform: uppercase;
+    margin-top: 1px;
+  }
+
+  .brand-logo__sub {
+    font-family: 'Lato', -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Variations */
+  .brand-logo--footer .brand-logo__name {
+    color: #ffffff;
+  }
+
+  .brand-logo--footer .brand-logo__sub {
+    color: #94a3b8;
+  }
+
+  @media (max-width: 480px) {
+    .brand-logo {
+      gap: 0.6rem;
+    }
+    .brand-logo__svg {
+      width: 32px;
+      height: 27px;
+    }
+    .brand-logo__name {
+      font-size: 1.05rem;
+    }
+    .brand-logo__tagline {
+      font-size: 0.6rem;
+    }
+    .brand-logo__sub {
+      font-size: 0.5rem;
+    }
+  }
+</style>

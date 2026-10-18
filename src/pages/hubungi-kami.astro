@@ -1,0 +1,460 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const address = 'Jl. Sosial No.70B, Kel. Jatiwaringin, Kec. Pondok Gede, BEKASI 17411';
+const phone = '0813-22090199';
+const email = 'mitra88supply@gmail.com';
+const gmapsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Jl. Sosial No.70B, Jatiwaringin, Pondok Gede, Bekasi');
+---
+
+<Layout
+  title="Hubungi Kami - MITRA88 SUPPLY | Kontak, Alamat & Konsultasi Plafon"
+  description="Hubungi Mitra 88 Supply: WhatsApp 0813-22090199, Email mitra88supply@gmail.com, Jl. Sosial No.70B Jatiwaringin, Pondok Gede, Bekasi 17411."
+  currentPath="/hubungi-kami"
+>
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-hero__badge">Layanan Konsultasi & Pemesanan</div>
+      <h1 class="page-hero__title">Hubungi Kami</h1>
+      <p class="page-hero__desc">
+        Hubungi tim Mitra 88 Supply untuk informasi detail produk, stok material plafon, survei lokasi, serta konsultasi harga (Fast Respon).
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Information Cards -->
+        <div class="contact-details">
+          <div class="section-tag">Kontak Resmi</div>
+          <h2 class="contact-heading">Informasi Kontak & Operasional</h2>
+          <p class="contact-lead">
+            Silakan hubungi kami melalui salah satu saluran komunikasi berikut atau langsung kunjungi kantor kami:
+          </p>
+
+          <div class="contact-card-list">
+            <!-- Office Address Card -->
+            <div class="contact-item-card">
+              <div class="contact-item-card__icon contact-item-card__icon--address">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-item-card__content">
+                <span class="contact-item-card__label">Alamat Kantor</span>
+                <p class="contact-item-card__val">
+                  <strong>Jl. Sosial No.70B</strong>, Kel. Jatiwaringin<br />
+                  Kec. Pondok Gede, BEKASI 17411
+                </p>
+                <a
+                  href={gmapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contact-item-card__action"
+                >
+                  Buka di Google Maps &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- WhatsApp & Phone Card -->
+            <div class="contact-item-card">
+              <div class="contact-item-card__icon contact-item-card__icon--phone">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-item-card__content">
+                <span class="contact-item-card__label">Nomor Telepon & WhatsApp</span>
+                <p class="contact-item-card__val">
+                  <a href={`tel:${phone.replace(/[^0-9]/g, '')}`} class="phone-link">
+                    {phone}
+                  </a>
+                </p>
+                <div class="mt-2">
+                  <WhatsAppButton
+                    variant="primary"
+                    text="Chat WA Langsung (Fast Respon)"
+                    message="Halo Mitra 88 Supply, saya ingin info detail harga dan konsultasi produk plafon..."
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="contact-item-card">
+              <div class="contact-item-card__icon contact-item-card__icon--email">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-item-card__content">
+                <span class="contact-item-card__label">Alamat Email</span>
+                <p class="contact-item-card__val">
+                  <a href={`mailto:${email}`} class="email-link">
+                    {email}
+                  </a>
+                </p>
+                <a href={`mailto:${email}`} class="contact-item-card__action">
+                  Kirim Email Penawaran &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Side Poster (matching Canva reference) -->
+        <div class="contact-visual">
+          <div class="poster-box">
+            <img
+              src="/images/poster-hero.jpg"
+              alt="Mitra 88 Supply Ceiling Reseller & Applicator Poster"
+              width="839"
+              height="636"
+              loading="lazy"
+              class="contact-poster-img"
+            />
+            <div class="poster-overlay-card">
+              <h3>Siap Melayani Kebutuhan Proyek Anda</h3>
+              <p>Konsultasi gratis, produk terjamin 100% original, dan pengerjaan bergaransi kepuasan.</p>
+              <WhatsAppButton
+                variant="large"
+                text="Chat WA (0813-22090199)"
+                message="Halo Mitra 88 Supply, saya ingin konsultasi kebutuhan ceiling..."
+                class="w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="areas-section">
+    <div class="container">
+      <div class="areas-card">
+        <div class="areas-card__header">
+          <h3>Jangkauan Wilayah Layanan</h3>
+          <p>
+            Mitra 88 Supply melayani suplai pengiriman material dan jasa pemasangan plafon untuk area:
+          </p>
+        </div>
+        <div class="areas-badges">
+          <span class="area-badge">Bekasi</span>
+          <span class="area-badge">Jakarta Timur</span>
+          <span class="area-badge">Jakarta Selatan</span>
+          <span class="area-badge">Jakarta Pusat</span>
+          <span class="area-badge">Jakarta Barat</span>
+          <span class="area-badge">Jakarta Utara</span>
+          <span class="area-badge">Depok</span>
+          <span class="area-badge">Bogor</span>
+          <span class="area-badge">Tangerang</span>
+          <span class="area-badge">Seluruh Proyek Nasional (Material)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* PAGE HERO */
+  .page-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    text-align: center;
+    border-bottom: 4px solid #dc2626;
+  }
+
+  .page-hero__badge {
+    display: inline-block;
+    background-color: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 0.85rem;
+  }
+
+  .page-hero__title {
+    color: #ffffff;
+    font-size: 2.85rem;
+    font-weight: 900;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-hero__desc {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    padding: 4.5rem 0;
+    background-color: #f8fafc;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 3.5rem;
+    align-items: flex-start;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background-color: #fee2e2;
+    color: #dc2626;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 0.85rem;
+  }
+
+  .contact-heading {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.85rem;
+    line-height: 1.2;
+  }
+
+  .contact-lead {
+    font-size: 1.05rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .contact-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 1.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .contact-item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+
+  .contact-item-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .contact-item-card__icon--address {
+    background-color: #fee2e2;
+    color: #dc2626;
+  }
+
+  .contact-item-card__icon--phone {
+    background-color: #dcfce7;
+    color: #16a34a;
+  }
+
+  .contact-item-card__icon--email {
+    background-color: #e0f2fe;
+    color: #0284c7;
+  }
+
+  .contact-item-card__content {
+    flex: 1;
+  }
+
+  .contact-item-card__label {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #797be4;
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-item-card__val {
+    font-size: 1.05rem;
+    color: #1e293b;
+    line-height: 1.5;
+    margin: 0 0 0.6rem;
+  }
+
+  .phone-link, .email-link {
+    color: #1e293b;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .phone-link:hover, .email-link:hover {
+    color: #dc2626;
+    text-decoration: underline;
+  }
+
+  .contact-item-card__action {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #dc2626;
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .contact-item-card__action:hover {
+    transform: translateX(4px);
+    text-decoration: underline;
+  }
+
+  .mt-2 {
+    margin-top: 0.65rem;
+  }
+
+  /* POSTER CARD */
+  .poster-box {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    border: 1px solid #e2e8f0;
+  }
+
+  .contact-poster-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .poster-overlay-card {
+    padding: 1.75rem;
+    background-color: #ffffff;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .poster-overlay-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .poster-overlay-card p {
+    font-size: 0.92rem;
+    color: #64748b;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  /* AREAS SECTION */
+  .areas-section {
+    padding: 0 0 5rem;
+    background-color: #f8fafc;
+  }
+
+  .areas-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+
+  .areas-card__header h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .areas-card__header p {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+  }
+
+  .areas-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .area-badge {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    border: 1px solid #cbd5e1;
+    transition: all 0.2s ease;
+  }
+
+  .area-badge:hover {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border-color: #fca5a5;
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .page-hero__title {
+      font-size: 2.15rem;
+    }
+    .contact-heading {
+      font-size: 1.75rem;
+    }
+    .contact-item-card {
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+  }
+</style>

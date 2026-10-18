@@ -1,0 +1,640 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const products = [
+  {
+    id: 'metal-ceiling-metallux',
+    category: 'METAL CEILING',
+    categoryBadge: 'Metal Ceiling',
+    badgeColor: 'red',
+    brand: 'Metallux',
+    brandLogo: '/images/brand-metallux.png',
+    image: '/images/product-metallux-600.jpg',
+    imageAlt: 'Metallux 600x600mm Lay-in Plain dan Perforated Metal Ceiling',
+    description:
+      'Kami menjual dan menawarkan jasa pasang metal ceiling material alumunium dengan finishing coating. Diaplikasikan untuk data center (server room), kitchen area, bandara, dan lain-lain yang membutuhkan suhu stabil dalam ruangan.',
+    specs: [
+      { label: 'Brand', value: 'Metallux' },
+      { label: 'Type', value: '(1) Lay-in Plain\n(2) Perforated (bolong2)' },
+      { label: 'Size', value: '600 x 600 x 0.6 mm' },
+      { label: 'Material', value: 'Alumunium dengan Finishing Coating' },
+      { label: 'Aplikasi', value: 'Data Center, Kitchen Area, Bandara, Ruangan Suhu Stabil' },
+    ],
+    callout: 'Untuk info detail dan harga, silakan hubungi kami (fast respon).'
+  },
+  {
+    id: 'acoustic-ceiling-armstrong',
+    category: 'ACOUSTIC CEILING',
+    categoryBadge: 'Acoustic Ceiling',
+    badgeColor: 'blue',
+    brand: 'ARMSTRONG',
+    brandLogo: '/images/brand-armstrong.png',
+    image: '/images/product-armstrong-acoustic.jpg',
+    imageAlt: 'Armstrong Acoustic Ceiling Knauf Solutions - Dune, Classic Lite, ANF, Fine Fissured',
+    description:
+      'Kami menjual dan menawarkan jasa pasang acoustic ceiling berbahan fiber serat optik, diaplikasikan untuk ruangan yang membutuhkan kedap suara.',
+    specs: [
+      { label: 'Brand', value: 'ARMSTRONG' },
+      {
+        label: 'Type & Size',
+        value:
+          '• ANF RH95, size: 600 x 1200 x 15 mm\n• Classic Lite RH99, size: 600 x 1200 x 16 mm\n• Fine Fissured RH99, size: 600 x 1200 x 16 mm\n• Dune #3641B, size: 600 x 1200 x 16 mm'
+      },
+      { label: 'Material', value: 'Fiber Serat Optik Kedap Suara' },
+      { label: 'Aplikasi', value: 'Office, Ruang Rapat, Studio, Auditorium' },
+    ],
+    callout: 'Untuk info detail dan harga, silakan hubungi kami (fast respon).'
+  },
+  {
+    id: 'gyptile-ceiling-jayapanel',
+    category: 'GYPTILE CEILING',
+    categoryBadge: 'Gyptile Ceiling',
+    badgeColor: 'yellow',
+    brand: 'JAYA PANEL (USG BORAL)',
+    brandLogo: '/images/brand-usg-boral.png',
+    image: '/images/product-jayapanel-gyptile.jpg',
+    imageAlt: 'Jaya Panel USG Boral Gyptile Ceiling Byhua Jayaboard',
+    description:
+      'Kami menjual dan menawarkan jasa pasang gyptile ceiling material berkualitas dengan lapisan finishing. Diaplikasikan untuk ruangan kantor, koridor, fasilitas umum, dan area komersial yang membutuhkan plafon rapi dan tahan lama.',
+    specs: [
+      { label: 'Brand', value: 'JAYA PANEL (USG BORAL)' },
+      { label: 'Type', value: 'Byhua' },
+      { label: 'Size', value: '600 x 1200 x 0.9 mm' },
+      { label: 'Lapisan', value: 'Aluminium Foil / White Tissue' },
+      { label: 'Aplikasi', value: 'Office, Koridor, Pertokoan, Gedung Komersial' },
+    ],
+    callout: 'Untuk info detail dan harga, silakan hubungi kami (fast respon).'
+  },
+  {
+    id: 'acoustic-ceiling-usgboral',
+    category: 'ACOUSTIC CEILING',
+    categoryBadge: 'Acoustic Ceiling',
+    badgeColor: 'blue',
+    brand: 'USG BORAL',
+    brandLogo: '/images/brand-usg-boral.png',
+    image: '/images/product-usg-pinperf.jpg',
+    secondaryImage: '/images/product-pinperf-sample.jpg',
+    imageAlt: 'USG Boral Pin Perf Climaplus Acoustic Ceiling Board',
+    description:
+      'Kami menjual dan menawarkan jasa pasang acoustic ceiling berbahan fiber serat optik, diaplikasikan untuk ruangan yang membutuhkan kedap suara.',
+    specs: [
+      { label: 'Brand', value: 'USG BORAL' },
+      { label: 'Type', value: 'Pin Perf' },
+      { label: 'Size', value: '600 x 1200 x 16 mm' },
+      { label: 'Material', value: 'Acoustic Board Pinhole ClimaPlus' },
+      { label: 'Aplikasi', value: 'Meeting Room, Aula Kantor, Sekolah, Rumah Sakit' },
+    ],
+    callout: 'Untuk info detail dan harga, silakan hubungi kami (fast respon).'
+  },
+  {
+    id: 'acoustic-ceiling-thermatex',
+    category: 'ACOUSTIC CEILING',
+    categoryBadge: 'Acoustic Ceiling (Thermatex)',
+    badgeColor: 'blue',
+    brand: 'AMF THERMATEX',
+    brandLogo: '/images/brand-amf.jpg',
+    image: '/images/product-amf-thermatex.jpg',
+    imageAlt: 'AMF Thermatex Star Board Acoustic Ceiling',
+    description:
+      'Kami menjual dan menawarkan jasa pasang acoustic ceiling berbahan fiber serat optik, diaplikasikan untuk ruangan yang membutuhkan kedap suara.',
+    specs: [
+      { label: 'Brand', value: 'AMF THERMATEX' },
+      { label: 'Type', value: 'Star Board' },
+      { label: 'Size', value: '600 x 1200 x 15 mm' },
+      { label: 'Material', value: 'Mineral Fiber Board Bertekstur Star' },
+      { label: 'Aplikasi', value: 'Ruangan Akustik, Hall, Kantor Perusahaan' },
+    ],
+    callout: 'Untuk info detail dan harga, silakan hubungi kami (fast respon).'
+  }
+];
+---
+
+<Layout
+  title="Produk dan Layanan - MITRA88 SUPPLY | Acoustic Ceiling, Metal Ceiling, Gyptile"
+  description="Katalog produk dan spesifikasi lengkap Mitra 88 Supply: Metal Ceiling Metallux 600x600, Acoustic Ceiling Armstrong, USG Boral, Jaya Panel Gyptile, dan AMF Thermatex."
+  currentPath="/layanan"
+>
+  <!-- PAGE HEADER -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-hero__badge">Katalog Material & Jasa Pasang</div>
+      <h1 class="page-hero__title">Produk dan Layanan</h1>
+      <p class="page-hero__desc">
+        Penyedia material resmi dan aplikator spesialis plafon modern untuk kebutuhan proyek perkantoran, komersial, maupun industri.
+      </p>
+    </div>
+  </header>
+
+  <!-- APPLICATION GUIDE (SOLUSI CEILING SESUAI KEBUTUHAN ANDA) -->
+  <section class="guide-banner">
+    <div class="container">
+      <div class="guide-card">
+        <div class="guide-card__header">
+          <span class="guide-tag">Panduan Kebutuhan Ruangan</span>
+          <h2 class="guide-card__title">Solusi ceiling sesuai kebutuhan Anda!</h2>
+          <p class="guide-card__intro">
+            Kami menawarkan solusi ceiling (plafon) sesuai dengan kebutuhan Anda, seperti :
+          </p>
+        </div>
+        <div class="guide-points">
+          <div class="guide-point">
+            <div class="guide-point__icon">&bull;</div>
+            <div class="guide-point__text">
+              <strong>Area Office (koridor dan meeting room)</strong> dengan menggunakan <em>acoustic ceiling</em> atau <em>gyptile ceiling</em>.
+            </div>
+          </div>
+          <div class="guide-point">
+            <div class="guide-point__icon">&bull;</div>
+            <div class="guide-point__text">
+              <strong>Area koridor bandara, data center (server room), atau area pantry (kitchen)</strong> menggunakan <em>metal ceiling</em>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS CATALOG -->
+  <section class="catalog-section">
+    <div class="container">
+      <div class="catalog-list">
+        {products.map((item, index) => (
+          <article class="product-card" id={item.id}>
+            <div class="product-card__gallery">
+              <div class="product-card__main-img-box">
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  width="600"
+                  height="500"
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                  class="product-card__img"
+                />
+              </div>
+              {item.secondaryImage && (
+                <div class="product-card__sub-img-box">
+                  <img
+                    src={item.secondaryImage}
+                    alt={`${item.brand} detail tekstur permukaan`}
+                    width="200"
+                    height="200"
+                    loading="lazy"
+                    class="product-card__sub-img"
+                  />
+                  <span class="sub-img-label">Detail Tekstur Pinhole</span>
+                </div>
+              )}
+            </div>
+
+            <div class="product-card__details">
+              <div class="product-card__meta-bar">
+                <span class={`product-category-badge product-category-badge--${item.badgeColor}`}>
+                  {item.categoryBadge}
+                </span>
+                {item.brandLogo && (
+                  <div class="product-card__brand-logo">
+                    <img src={item.brandLogo} alt={`Logo ${item.brand}`} height="28" loading="lazy" />
+                  </div>
+                )}
+              </div>
+
+              <h2 class="product-card__title">{item.category}</h2>
+
+              <p class="product-card__description">{item.description}</p>
+
+              <!-- Specifications List -->
+              <div class="specs-block">
+                <h3 class="specs-title">Spesifikasi Material:</h3>
+                <dl class="specs-list">
+                  {item.specs.map(spec => (
+                    <div class="spec-row">
+                      <dt class="spec-term">{spec.label} :</dt>
+                      <dd class="spec-desc">{spec.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+
+              <!-- Authentic callout -->
+              <div class="product-card__callout">
+                <p><em>{item.callout}</em></p>
+              </div>
+
+              <!-- Product Actions -->
+              <div class="product-card__actions">
+                <WhatsAppButton
+                  variant="primary"
+                  text={`Tanya Harga & Stok ${item.brand}`}
+                  message={`Halo Mitra 88 Supply, saya tertarik dengan produk ${item.category} (Brand: ${item.brand}). Mohon info detail harga dan ketersediaan stok.`}
+                  class="w-full-sm"
+                />
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CONSULTATION CTA -->
+  <section class="bottom-cta-section">
+    <div class="container">
+      <div class="bottom-cta-card">
+        <h2>Perlu Bantuan Menentukan Material Ceiling yang Tepat?</h2>
+        <p>
+          Tim aplikator dan spesialis teknis Mitra 88 Supply siap membantu menghitung kebutuhan bahan, estimasi rangka, dan jasa pasang proyek Anda.
+        </p>
+        <div class="bottom-cta-btn-group">
+          <WhatsAppButton variant="large" text="Chat WhatsApp (0813-22090199)" />
+          <a href="/hubungi-kami" class="btn-outline-white">Lihat Informasi Kontak Lengkap</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* PAGE HERO */
+  .page-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    padding: 3.5rem 0 3rem;
+    text-align: center;
+    border-bottom: 4px solid #dc2626;
+  }
+
+  .page-hero__badge {
+    display: inline-block;
+    background-color: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 0.85rem;
+  }
+
+  .page-hero__title {
+    color: #ffffff;
+    font-size: 2.85rem;
+    font-weight: 900;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-hero__desc {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+
+  /* GUIDE BANNER */
+  .guide-banner {
+    padding: 2.5rem 0 1rem;
+  }
+
+  .guide-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 6px solid #dc2626;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  }
+
+  .guide-tag {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #dc2626;
+    letter-spacing: 0.05em;
+  }
+
+  .guide-card__title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0.35rem 0 0.5rem;
+  }
+
+  .guide-card__intro {
+    font-size: 1.05rem;
+    color: #475569;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+  }
+
+  .guide-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .guide-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background-color: #f8fafc;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .guide-point__icon {
+    color: #dc2626;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .guide-point__text {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.55;
+  }
+
+  /* CATALOG SECTION */
+  .catalog-section {
+    padding: 2.5rem 0 5rem;
+  }
+
+  .catalog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .product-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .product-card__gallery {
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #f1f5f9;
+  }
+
+  .product-card__main-img-box {
+    width: 100%;
+    max-width: 440px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    background: #ffffff;
+  }
+
+  .product-card__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .product-card__sub-img-box {
+    position: relative;
+    width: 100%;
+    max-width: 240px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #ffffff;
+    text-align: center;
+  }
+
+  .product-card__sub-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+  }
+
+  .sub-img-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .product-card__details {
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card__meta-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .product-category-badge {
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+  }
+
+  .product-category-badge--red {
+    background-color: #fee2e2;
+    color: #dc2626;
+  }
+
+  .product-category-badge--blue {
+    background-color: #e0f2fe;
+    color: #0369a1;
+  }
+
+  .product-category-badge--yellow {
+    background-color: #fef3c7;
+    color: #b45309;
+  }
+
+  .product-card__brand-logo img {
+    max-height: 28px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .product-card__title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #1a4980;
+    font-style: italic;
+    margin-bottom: 0.85rem;
+  }
+
+  .product-card__description {
+    font-size: 0.98rem;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .specs-block {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .specs-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .specs-list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+  }
+
+  .spec-term {
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .spec-desc {
+    margin: 0;
+    color: #475569;
+    white-space: pre-line;
+  }
+
+  .product-card__callout {
+    margin-bottom: 1.5rem;
+  }
+
+  .product-card__callout p {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .product-card__actions {
+    margin-top: auto;
+  }
+
+  /* BOTTOM CTA */
+  .bottom-cta-section {
+    padding: 0 0 5rem;
+  }
+
+  .bottom-cta-card {
+    background: linear-gradient(135deg, #1a2634 0%, #2c3e50 100%);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-top: 4px solid #00b050;
+  }
+
+  .bottom-cta-card h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.85rem;
+  }
+
+  .bottom-cta-card p {
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .bottom-cta-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.95rem 1.75rem;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .btn-outline-white:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #ffffff;
+  }
+
+  @media (max-width: 900px) {
+    .product-card {
+      grid-template-columns: 1fr;
+    }
+    .product-card__gallery {
+      border-right: none;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .guide-points {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .spec-row {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+    .product-card__details {
+      padding: 1.5rem;
+    }
+    .page-hero__title {
+      font-size: 2.15rem;
+    }
+  }
+</style>

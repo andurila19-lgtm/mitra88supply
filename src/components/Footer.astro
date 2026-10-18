@@ -1,0 +1,536 @@
+---
+import Logo from './Logo.astro';
+import WhatsAppButton from './WhatsAppButton.astro';
+
+const navLinks = [
+  { label: 'Tentang Kami', href: '/' },
+  { label: 'Produk & Layanan', href: '/layanan' },
+  { label: 'Portofolio Project', href: '/porto-folio-project' },
+  { label: 'Hubungi Kami', href: '/hubungi-kami' },
+];
+
+const brands = [
+  'Metallux',
+  'Armstrong Ceilings',
+  'USG Boral',
+  'Jayaboard',
+  'AMF Thermatex',
+  'Knauf Ceiling Solutions'
+];
+---
+
+<footer class="site-footer">
+  <div class="site-footer__container">
+    <!-- ============================================== -->
+    <!-- DESKTOP FOOTER (Hidden completely on mobile)   -->
+    <!-- ============================================== -->
+    <div class="site-footer__desktop">
+      <!-- Col 1: Brand Info -->
+      <div class="site-footer__col site-footer__col--brand">
+        <Logo variant="footer" />
+        <p class="site-footer__desc">
+          MITRA88 SUPPLY merupakan badan usaha yang berfokus pada solusi ceiling (plafon) modern. Kami melayani sebagai reseller material plafon akustik (acoustic ceiling), metal ceiling, gypsum, serta menyediakan jasa pemasangan profesional untuk berbagai skala proyek.
+        </p>
+        <div class="site-footer__social">
+          <a
+            href="https://youtube.com/@mitra88supply"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link social-link--youtube"
+            aria-label="Kunjungi Channel YouTube Mitra 88 Supply"
+          >
+            <img src="/images/icon-youtube.png" alt="YouTube Icon" width="24" height="24" loading="lazy" />
+            <span>Channel YouTube Mitra 88</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation & Brands -->
+      <div class="site-footer__col site-footer__col--nav">
+        <h3 class="site-footer__title">Navigasi Halaman</h3>
+        <ul class="footer-links">
+          {navLinks.map((link) => (
+            <li>
+              <a href={link.href} class="footer-link">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+        <h3 class="site-footer__title footer-title--brands">Brand Partner</h3>
+        <div class="footer-brands">
+          {brands.map((b) => <span class="brand-tag">{b}</span>)}
+        </div>
+      </div>
+
+      <!-- Col 3: Contact Details -->
+      <div class="site-footer__col site-footer__col--contact">
+        <h3 class="site-footer__title">Hubungi Kami</h3>
+        <ul class="contact-info-list">
+          <li class="contact-info-item">
+            <span class="contact-info-label">Alamat Kantor:</span>
+            <span class="contact-info-val">Jl. Sosial No.70B, Kel. Jatiwaringin, Kec. Pondok Gede, BEKASI 17411</span>
+          </li>
+          <li class="contact-info-item">
+            <span class="contact-info-label">Alamat Email:</span>
+            <a href="mailto:mitra88supply@gmail.com" class="contact-info-val contact-info-val--link">mitra88supply@gmail.com</a>
+          </li>
+          <li class="contact-info-item">
+            <span class="contact-info-label">Nomor Telepon:</span>
+            <a href="tel:081322090199" class="contact-info-val contact-info-val--link">0813-2209-0199</a>
+          </li>
+        </ul>
+
+        <div class="footer-cta">
+          <WhatsAppButton variant="primary" text="Konsultasi via WhatsApp" class="w-full" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- MINIMALIST MOBILE FOOTER (Visible on <= 768px)  -->
+    <!-- ============================================== -->
+    <div class="site-footer__mobile">
+      <div class="mobile-footer__logo">
+        <Logo variant="footer" />
+      </div>
+
+      <p class="mobile-footer__tagline">
+        Reseller Resmi &amp; Aplikator Plafon Akustik, Metal Ceiling &amp; Gypsum
+      </p>
+
+      <!-- Minimalist Clean Navigation Link Row -->
+      <nav class="mobile-footer__nav" aria-label="Navigasi Footer Mobile">
+        <a href="/" class="mobile-nav-link">Beranda</a>
+        <span class="nav-bullet" aria-hidden="true">&bull;</span>
+        <a href="/layanan" class="mobile-nav-link">Layanan</a>
+        <span class="nav-bullet" aria-hidden="true">&bull;</span>
+        <a href="/porto-folio-project" class="mobile-nav-link">Portofolio</a>
+        <span class="nav-bullet" aria-hidden="true">&bull;</span>
+        <a href="/hubungi-kami" class="mobile-nav-link">Kontak</a>
+      </nav>
+
+      <!-- 4 Sleek Circular Icon Buttons (Phone, WA, Email, YouTube) -->
+      <div class="mobile-footer__icons" aria-label="Kontak Cepat">
+        <a
+          href="tel:081322090199"
+          class="m-icon-btn m-icon-btn--phone"
+          aria-label="Telepon: 0813-2209-0199"
+          title="Telepon: 0813-2209-0199"
+        >
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+        </a>
+
+        <a
+          href="https://wa.me/6281322090199?text=Halo%20Mitra%2088%20Supply%2C%20saya%20ingin%20konsultasi%20kebutuhan%20ceiling..."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="m-icon-btn m-icon-btn--wa"
+          aria-label="WhatsApp: 0813-2209-0199"
+          title="Chat WhatsApp"
+        >
+          <svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M16 2a13.9 13.9 0 0 0-12 21l-2 7.7 8-2A13.9 13.9 0 1 0 16 2zm0 25.5c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.7 1.2 1.3-4.6-.3-.5A11.5 11.5 0 1 1 16 27.5zm6.3-8.6c-.3-.2-2-.9-2.3-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.3 0-.5.2-.7s.3-.4.5-.5a2 2 0 0 0 .3-.5.7.7 0 0 0 0-.6c0-.2-.7-1.8-1-2.4s-.6-.5-.8-.5h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2 7.5 7.5 0 0 0 1.6 4 17.2 17.2 0 0 0 6.6 5.8c3.9 1.7 3.9 1.1 4.6 1.1a3.9 3.9 0 0 0 2.6-1.8 3.2 3.2 0 0 0 .2-1.8c-.2-.2-.4-.3-.7-.5z"/>
+          </svg>
+        </a>
+
+        <a
+          href="mailto:mitra88supply@gmail.com"
+          class="m-icon-btn m-icon-btn--email"
+          aria-label="Email: mitra88supply@gmail.com"
+          title="Kirim Email"
+        >
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+          </svg>
+        </a>
+
+        <a
+          href="https://youtube.com/@mitra88supply"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="m-icon-btn m-icon-btn--yt"
+          aria-label="YouTube Channel: @mitra88supply"
+          title="Channel YouTube"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Compact readable contact note -->
+      <div class="mobile-footer__contact-line">
+        <span>0813-2209-0199</span>
+        <span class="nav-bullet">&bull;</span>
+        <span>mitra88supply@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright Bar -->
+  <div class="site-footer__bottom">
+    <div class="site-footer__bottom-container">
+      <p>&copy; {new Date().getFullYear()} MITRA88 SUPPLY. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    margin-top: 4rem;
+    border-top: 4px solid #dc2626;
+  }
+
+  .site-footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 2.5rem;
+  }
+
+  /* DESKTOP GRID */
+  .site-footer__desktop {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    gap: 3rem;
+  }
+
+  .site-footer__col--brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .site-footer__desc {
+    font-family: 'Lato', system-ui, sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .site-footer__title {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1.2rem;
+    position: relative;
+    padding-bottom: 0.4rem;
+  }
+
+  .site-footer__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 36px;
+    height: 2px;
+    background-color: #dc2626;
+    border-radius: 2px;
+  }
+
+  .footer-title--brands {
+    margin-top: 1.75rem;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .footer-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-link:hover {
+    color: #ef4444;
+    transform: translateX(4px);
+  }
+
+  .footer-brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .brand-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    font-size: 0.78rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .contact-info-label {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ef4444;
+  }
+
+  .contact-info-val {
+    font-size: 0.92rem;
+    color: #cbd5e1;
+    line-height: 1.45;
+  }
+
+  .contact-info-val--link {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-info-val--link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 0.55rem 0.95rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .social-link:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+  }
+
+  .footer-cta {
+    margin-top: 1rem;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  /* ============================================== */
+  /* MINIMALIST MOBILE FOOTER STYLES                */
+  /* ============================================== */
+  .site-footer__mobile {
+    display: none;
+  }
+
+  /* Bottom copyright bar */
+  .site-footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #090d16;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    font-size: 0.82rem;
+    color: #64748b;
+  }
+
+  .site-footer__bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .site-footer__bottom p {
+    margin: 0;
+  }
+
+  /* ============================================== */
+  /* RESPONSIVE BREAKPOINT: MOBILE (<= 768px)       */
+  /* ============================================== */
+  @media (max-width: 768px) {
+    .site-footer {
+      margin-top: 2.5rem;
+    }
+
+    .site-footer__container {
+      padding: 2rem 1.25rem 1.5rem;
+    }
+
+    /* Completely hide desktop columns on mobile */
+    .site-footer__desktop {
+      display: none !important;
+    }
+
+    /* Show minimalist mobile layout */
+    .site-footer__mobile {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.15rem;
+    }
+
+    .mobile-footer__logo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .mobile-footer__tagline {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      max-width: 320px;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    /* Minimalist Horizontal Nav */
+    .mobile-footer__nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem 0.65rem;
+      padding: 0.65rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .mobile-nav-link {
+      color: #cbd5e1;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.2rem 0.35rem;
+      transition: color 0.15s ease;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link:active {
+      color: #ef4444;
+    }
+
+    .nav-bullet {
+      color: #475569;
+      font-size: 0.75rem;
+      user-select: none;
+    }
+
+    /* Sleek 4 Circular Icon Buttons in ONE Centered Row */
+    .mobile-footer__icons {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.85rem !important;
+      margin: 0.25rem 0;
+    }
+
+    .m-icon-btn {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 44px !important;
+      height: 44px !important;
+      border-radius: 50% !important;
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #cbd5e1 !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+      flex-shrink: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .m-icon-btn svg {
+      display: block !important;
+      width: 20px !important;
+      height: 20px !important;
+      fill: currentColor !important;
+      margin: 0 !important;
+      flex-shrink: 0 !important;
+    }
+
+    .m-icon-btn:hover,
+    .m-icon-btn:active {
+      color: #ffffff !important;
+    }
+
+    .m-icon-btn--phone:hover,
+    .m-icon-btn--phone:active {
+      background-color: #ef4444 !important;
+      border-color: #ef4444 !important;
+    }
+
+    .m-icon-btn--wa:hover,
+    .m-icon-btn--wa:active {
+      background-color: #00b050 !important;
+      border-color: #00b050 !important;
+    }
+
+    .m-icon-btn--email:hover,
+    .m-icon-btn--email:active {
+      background-color: #0284c7 !important;
+      border-color: #0284c7 !important;
+    }
+
+    .m-icon-btn--yt:hover,
+    .m-icon-btn--yt:active {
+      background-color: #dc2626 !important;
+      border-color: #dc2626 !important;
+    }
+
+    /* Minimalist Contact Line */
+    .mobile-footer__contact-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: #94a3b8;
+      font-family: var(--font-body);
+      flex-wrap: wrap;
+    }
+
+    /* Minimalist Copyright bar */
+    .site-footer__bottom {
+      padding: 0.85rem 1rem;
+      font-size: 0.75rem;
+      color: #64748b;
+      text-align: center;
+    }
+
+    .site-footer__bottom p {
+      margin: 0;
+      line-height: 1.4;
+      white-space: normal;
+    }
+  }
+</style>
