@@ -549,6 +549,7 @@ const projects = [
     .yt-card {
       flex-direction: column;
       text-align: center;
+      padding: 1.75rem 1.5rem;
     }
     .project-card__grid,
     .project-card__grid--reverse {
@@ -564,18 +565,114 @@ const projects = [
       padding: 1.75rem;
       border-left: none;
       border-top: 4px solid #1a2634;
+      min-width: 0;
+    }
+    .project-card__images {
+      min-width: 0;
+    }
+    .cta-box {
+      padding: 2.25rem 1.75rem;
     }
   }
 
   @media (max-width: 600px) {
+    .page-hero {
+      padding: 2.75rem 0 2rem;
+    }
     .page-hero__title {
       font-size: 2.15rem;
     }
-    .project-card__title {
-      font-size: 1.5rem;
+    .page-hero__desc {
+      font-size: 0.95rem;
+    }
+
+    .yt-card {
+      padding: 1.35rem 1.15rem;
+      gap: 1rem;
+    }
+    .yt-title {
+      font-size: 1.2rem;
+    }
+    .yt-desc {
+      font-size: 0.9rem;
+    }
+    .yt-card__action,
+    .yt-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .portfolio-section {
+      padding: 2rem 0 3.5rem;
+    }
+    .portfolio-list {
+      gap: 2rem;
+    }
+    .project-card {
+      min-width: 0;
+    }
+    .project-card__images {
+      padding: 1rem;
     }
     .project-card__img {
       height: 220px;
+    }
+    .project-card__content {
+      padding: 1.25rem 1rem;
+    }
+    .project-card__title {
+      font-size: 1.35rem;
+    }
+    .project-card__desc {
+      font-size: 0.92rem;
+      margin-bottom: 1.25rem;
+    }
+    .project-highlights {
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .project-highlights li {
+      font-size: 0.85rem;
+    }
+    .project-card__action :global(.wa-btn) {
+      width: 100%;
+    }
+
+    .portfolio-cta {
+      padding: 0 0 3.5rem;
+    }
+    .cta-box {
+      padding: 2rem 1.25rem;
+      border-radius: 12px;
+    }
+    .cta-box h2 {
+      font-size: 1.45rem;
+    }
+    .cta-box p {
+      font-size: 0.92rem;
+      margin-bottom: 1.5rem;
+    }
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+    .cta-buttons :global(.wa-btn),
+    .cta-buttons .btn-outline-white {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .page-hero__title {
+      font-size: 1.85rem;
+    }
+    .project-card__title {
+      font-size: 1.25rem;
+    }
+    .project-card__img {
+      height: 180px;
     }
   }
 </style>
