@@ -1,314 +1,257 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
 
-const projects = [
+interface PortfolioItem {
+  id: string;
+  image: string;
+  brandLogo: string;
+  brandName: string;
+  lines: string[];
+}
+
+const projects: PortfolioItem[] = [
   {
     id: 'marunda-project',
-    title: 'Marunda project, Acoustic ceiling.',
-    client: 'Marunda Project',
-    type: 'Acoustic Ceiling (Plafon Akustik)',
-    brand: 'ARMSTRONG CEILINGS',
-    brandLogo: '/images/brand-armstrong.png',
-    image: '/images/portfolio-marunda.jpg',
-    imageAlt: 'Hasil pemasangan plafon akustik Armstrong pada Marunda Project',
-    description:
-      'Pengerjaan dan suplai material acoustic ceiling peredam suara untuk gedung operasional di kawasan Marunda, memberikan insulasi akustik prima dan visual modular yang rapi.',
-    specs: ['Material: Fiber Serat Optik Armstrong', 'Grid: Exposed T-Bar System', 'Karakteristik: Peredam gema, tahan lendut']
+    image: '/images/portfolio-marunda.webp',
+    brandLogo: '/images/brand-armstrong.webp',
+    brandName: 'ARMSTRONG',
+    lines: ['Marunda project,', 'Acoustic ceiling.']
   },
   {
     id: 'datacenter-project',
-    title: 'Data center (server room), bandara project. Metal ceiling',
-    client: 'Data Center & Bandara Project',
-    type: 'Metal Ceiling (Alumunium)',
-    brand: 'METALLUX',
-    brandLogo: '/images/brand-metallux.png',
-    image: '/images/portfolio-datacenter.jpg',
-    secondaryImage: '/images/portfolio-datacenter-alt.jpg',
-    imageAlt: 'Pemasangan metal ceiling Metallux di data center server room dan bandara',
-    description:
-      'Aplikasi metal ceiling material alumunium dengan finishing coating untuk data center (server room) dan koridor bandara yang memerlukan ketahanan suhu stabil, sirkulasi udara optimal, serta bebas debu.',
-    specs: ['Material: Alumunium Finishing Coating', 'Size: 600x600 mm', 'Karakteristik: Tahan lembap, stabil suhu, anti-rayap']
-  },
-  {
-    id: 'office-hallway-project',
-    title: 'Commercial Office & Corridor Area',
-    client: 'Office Building Project',
-    type: 'Acoustic & Gyptile Ceiling',
-    brand: 'JAYA PANEL / USG BORAL',
-    brandLogo: '/images/brand-usg-boral.png',
-    image: '/images/portfolio-hallway.jpg',
-    secondaryImage: '/images/portfolio-hallway-alt.jpg',
-    imageAlt: 'Pengerjaan plafon akustik aula koridor luas gedung komersial',
-    description:
-      'Pemasangan plafon area koridor dan open-space kantor dengan bentang luas untuk memaksimalkan pantulan cahaya dan kenyamanan akustik kerja.',
-    specs: ['Material: Gyptile & Mineral Fiber', 'Aplikasi: Area Koridor & Hall Utama', 'Pengerjaan: Rapi, presisi, cepat']
-  },
-  {
-    id: 'meeting-room-project',
-    title: 'Corporate Meeting Room & Executive Lounge',
-    client: 'Meeting Room Project',
-    type: 'Acoustic Ceiling Modular',
-    brand: 'AMF THERMATEX & ARMSTRONG',
-    brandLogo: '/images/brand-amf.jpg',
-    image: '/images/portfolio-meeting-room.jpg',
-    secondaryImage: '/images/portfolio-installation.jpg',
-    imageAlt: 'Dokumentasi ruang rapat meeting room dan proses instalasi ceiling',
-    description:
-      'Instalasi plafon kedap suara di ruang rapat eksekutif, menjaga kerahasiaan percakapan internal dan kenyamanan diskusi tim.',
-    specs: ['Tingkat Redam: High NRC (Noise Reduction Coefficient)', 'Fitur: Integrasi lampu LED & difuser AC', 'Status: Selesai tepat waktu']
+    image: '/images/portfolio-datacenter-alt.webp',
+    brandLogo: '/images/brand-metallux.webp',
+    brandName: 'METALLUX',
+    lines: ['Data center (server room),', ' bandara project.', 'Metal ceiling']
   }
 ];
 ---
 
 <Layout
-  title="Portofolio Project - MITRA88 SUPPLY | Dokumentasi Proyek Plafon"
-  description="Dokumentasi proyek pemasangan plafon akustik dan metal ceiling Mitra 88 Supply: Marunda project, data center server room, bandara, dan perkantoran komersial."
+  title="Porto Folio Project - MITRA88 SUPPLY"
+  description="MITRA88 SUPPLY merupakan badan usaha yang berfokus pada solusi ceiling (plafon) modern. Kami melayani sebagai reseller material plafon akustik (acoustic ceiling), metal ceiling, gypsum, serta menyediakan jasa pemasangan profesional untuk berbagai skala proyek."
   currentPath="/porto-folio-project"
 >
-  <!-- PAGE HERO -->
-  <header class="page-hero">
-    <div class="container">
-      <div class="page-hero__badge">Galeri Pekerjaan Lapangan</div>
-      <h1 class="page-hero__title">Portofolio Project</h1>
-      <p class="page-hero__desc">
-        Bukti nyata dedikasi dan profesionalitas tim Mitra 88 Supply dalam menyelesaikan berbagai skala proyek ceiling dengan standar mutu tertinggi.
-      </p>
-    </div>
-  </header>
-
-  <!-- YOUTUBE HIGHLIGHT BANNER -->
-  <section class="yt-banner">
-    <div class="container">
-      <div class="yt-card">
-        <div class="yt-card__visual">
-          <img src="/images/icon-youtube.png" alt="YouTube 3D Icon" width="72" height="72" class="yt-icon-img" />
-        </div>
-        <div class="yt-card__content">
-          <span class="yt-tag">Official Channel YouTube</span>
-          <h2 class="yt-title">Portofolio lainnya dapat dilihat di channel Youtube kami :</h2>
-          <p class="yt-desc">
-            Saksikan video dokumentasi proses pemasangan langsung di lapangan, review kualitas panel ceiling, dan walkthrough hasil proyek selesai di channel resmi kami.
-          </p>
-        </div>
-        <div class="yt-card__action">
-          <a
-            href="https://youtube.com/@mitra88supply"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="yt-btn"
-            aria-label="Buka Channel YouTube Mitra 88 Supply"
-          >
-            <span class="yt-btn__icon">&#9658;</span>
-            <span class="yt-btn__text">Lihat di Youtube</span>
-          </a>
-        </div>
+  <div class="page-container">
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+      <div class="container text-center">
+        <h1 class="page-title">Porto Folio Project</h1>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- PORTFOLIO SHOWCASE -->
-  <section class="portfolio-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-header__tag">Daftar Proyek Unggulan</span>
-        <h2 class="section-header__title">Pengerjaan Reseller & Applicator</h2>
-        <p class="section-header__desc">
-          Dokumentasi asli proyek yang dipercayakan kepada Mitra 88 Supply oleh berbagai klien korporasi dan institusi.
-        </p>
-      </div>
-
-      <div class="portfolio-list">
-        {projects.map((proj, idx) => (
-          <article class="project-card" id={proj.id}>
-            <div class={`project-card__grid ${idx % 2 === 1 ? 'project-card__grid--reverse' : ''}`}>
-              <!-- Visuals -->
-              <div class="project-card__images">
-                <div class="project-card__main-img-wrap">
-                  <img
-                    src={proj.image}
-                    alt={proj.imageAlt}
-                    width="600"
-                    height="450"
-                    loading={idx === 0 ? 'eager' : 'lazy'}
-                    class="project-card__img"
-                  />
-                  <span class="project-badge">{proj.type}</span>
-                </div>
-                {proj.secondaryImage && (
-                  <div class="project-card__sub-img-wrap">
-                    <img
-                      src={proj.secondaryImage}
-                      alt={`${proj.title} dokumentasi tambahan`}
-                      width="300"
-                      height="200"
-                      loading="lazy"
-                      class="project-card__sub-img"
-                    />
-                  </div>
-                )}
+    <!-- PORTFOLIO PROJECTS SECTION -->
+    <section class="portfolio-section">
+      <div class="container">
+        <div class="portfolio-grid">
+          {projects.map((proj) => (
+            <article class="portfolio-card" id={proj.id}>
+              <!-- PHOTO CONTAINER (Slot siap untuk 3-5 foto tambahan dari klien) -->
+              <div class="portfolio-card__photo-frame">
+                <img
+                  src={proj.image}
+                  alt={proj.lines.join(' ')}
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                  class="portfolio-photo"
+                />
               </div>
 
-              <!-- Content details -->
-              <div class="project-card__content">
-                <div class="project-card__brand-row">
-                  <span class="project-type-tag">{proj.type}</span>
-                  {proj.brandLogo && (
-                    <div class="project-brand-box">
-                      <img src={proj.brandLogo} alt={`Brand ${proj.brand}`} height="28" loading="lazy" />
-                    </div>
-                  )}
+              <div class="portfolio-card__body">
+                <div class="portfolio-card__brand">
+                  <img src={proj.brandLogo} alt={proj.brandName} height="28" loading="lazy" class="brand-img" />
                 </div>
 
-                <h3 class="project-card__title">{proj.title}</h3>
-
-                <p class="project-card__desc">{proj.description}</p>
-
-                <div class="project-highlights">
-                  <h4>Sorotan Spesifikasi Proyek:</h4>
-                  <ul>
-                    {proj.specs.map(s => <li>{s}</li>)}
-                  </ul>
-                </div>
-
-                <div class="project-card__action">
-                  <WhatsAppButton
-                    variant="primary"
-                    text="Konsultasi Proyek Serupa"
-                    message={`Halo Mitra 88 Supply, saya melihat portofolio "${proj.title}" dan ingin konsultasi untuk kebutuhan proyek saya.`}
-                  />
-                </div>
+                <h2 class="portfolio-card__heading">
+                  {proj.lines.map((line) => (
+                    <span class="heading-line">{line}</span>
+                  ))}
+                </h2>
               </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- YOUTUBE SECTION -->
+        <div class="yt-banner">
+          <div class="yt-banner__container">
+            <div class="yt-banner__icon">
+              <img src="/images/icon-youtube.webp" alt="YouTube Icon" width="64" height="64" loading="lazy" />
             </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- CTA SECTION -->
-  <section class="portfolio-cta">
-    <div class="container">
-      <div class="cta-box">
-        <h2>Punya Kebutuhan Material atau Jasa Pasang Ceiling?</h2>
-        <p>Hubungi tim kami untuk survei lokasi, pengukuran volume material, dan penawaran harga terbaik.</p>
-        <div class="cta-buttons">
-          <WhatsAppButton variant="large" text="Chat WA (0813-22090199)" />
-          <a href="/layanan" class="btn-outline-white">Lihat Katalog Produk & Layanan</a>
+            <div class="yt-banner__content">
+              <h2 class="yt-banner__text">
+                Porto Folio lainnya dapat dilihat di channel Youtube kami :
+              </h2>
+            </div>
+
+            <div class="yt-banner__action">
+              <a
+                href="https://youtube.com/@mitra88supply"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="yt-btn"
+                aria-label="Lihat di Youtube"
+              >
+                <span>Lihat di Youtube</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </Layout>
 
 <style>
-  /* PAGE HERO */
-  .page-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    color: #ffffff;
-    padding: 3.5rem 0 3rem;
-    text-align: center;
-    border-bottom: 4px solid #dc2626;
+  .page-container {
+    padding-bottom: 5rem;
   }
 
-  .page-hero__badge {
-    display: inline-block;
-    background-color: rgba(220, 38, 38, 0.2);
-    color: #fca5a5;
-    border: 1px solid rgba(220, 38, 38, 0.4);
-    font-family: var(--font-heading);
-    font-size: 0.82rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.35rem 0.85rem;
-    border-radius: 50px;
-    margin-bottom: 0.85rem;
+  /* PAGE HEADER */
+  .page-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 3.5rem 0 2.5rem;
   }
 
-  .page-hero__title {
-    color: #ffffff;
-    font-size: 2.85rem;
+  .page-title {
+    font-size: 3rem;
     font-weight: 900;
-    margin-bottom: 0.85rem;
+    color: #1e293b;
+    margin: 0;
     letter-spacing: -0.02em;
   }
 
-  .page-hero__desc {
-    max-width: 650px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    color: #cbd5e1;
-    line-height: 1.6;
+  /* PORTFOLIO SECTION */
+  .portfolio-section {
+    padding: 4rem 0;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .portfolio-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  }
+
+  .portfolio-card__photo-frame {
+    width: 100%;
+    height: 380px;
+    background-color: #0f172a;
+    overflow: hidden;
+  }
+
+  .portfolio-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-card:hover .portfolio-photo {
+    transform: scale(1.03);
+  }
+
+  .portfolio-card__body {
+    padding: 2rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex: 1;
+    background-color: #ffffff;
+  }
+
+  .portfolio-card__brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand-img {
+    max-height: 30px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .portfolio-card__heading {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.35;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heading-line {
+    display: block;
   }
 
   /* YOUTUBE BANNER */
   .yt-banner {
-    padding: 3rem 0 1rem;
-  }
-
-  .yt-card {
     background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
     border: 2px solid #fee2e2;
     border-radius: 16px;
-    padding: 2.25rem 2.5rem;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    padding: 2.5rem 3rem;
     box-shadow: 0 8px 24px rgba(220, 38, 38, 0.08);
   }
 
-  .yt-card__visual {
+  .yt-banner__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .yt-banner__icon {
     flex-shrink: 0;
   }
 
-  .yt-icon-img {
-    filter: drop-shadow(0 4px 10px rgba(220, 38, 38, 0.3));
-  }
-
-  .yt-card__content {
+  .yt-banner__content {
     flex: 1;
   }
 
-  .yt-tag {
-    font-family: var(--font-heading);
-    font-size: 0.78rem;
+  .yt-banner__text {
+    font-size: 1.45rem;
     font-weight: 800;
-    text-transform: uppercase;
-    color: #dc2626;
-    letter-spacing: 0.08em;
-  }
-
-  .yt-title {
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: #1a2634;
-    margin: 0.3rem 0 0.5rem;
-    line-height: 1.3;
-  }
-
-  .yt-desc {
-    font-size: 0.95rem;
-    color: #64748b;
+    color: #1e293b;
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.35;
   }
 
-  .yt-card__action {
+  .yt-banner__action {
     flex-shrink: 0;
   }
 
   .yt-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    justify-content: center;
     background-color: #ff0000;
     color: #ffffff;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.12rem;
     text-decoration: none;
-    padding: 0.9rem 1.75rem;
+    padding: 0.95rem 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 14px rgba(255, 0, 0, 0.35);
     transition: all 0.25s ease;
@@ -321,358 +264,43 @@ const projects = [
     box-shadow: 0 6px 20px rgba(255, 0, 0, 0.45);
   }
 
-  .yt-btn__icon {
-    font-size: 1.1rem;
-    line-height: 1;
-  }
-
-  /* PORTFOLIO LIST */
-  .portfolio-section {
-    padding: 3rem 0 5rem;
-  }
-
-  .portfolio-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5rem;
-  }
-
-  .project-card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .project-card:hover {
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  }
-
-  .project-card__grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1.3fr;
-    align-items: center;
-  }
-
-  .project-card__grid--reverse {
-    grid-template-columns: 1.3fr 1.2fr;
-  }
-
-  .project-card__grid--reverse .project-card__images {
-    order: 2;
-  }
-
-  .project-card__grid--reverse .project-card__content {
-    order: 1;
-  }
-
-  .project-card__images {
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: #f8fafc;
-  }
-
-  .project-card__main-img-wrap {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-
-  .project-card__img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-  }
-
-  .project-badge {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    background-color: rgba(26, 38, 52, 0.88);
-    color: #ffffff;
-    font-family: var(--font-heading);
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 0.35rem 0.75rem;
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
-  }
-
-  .project-card__sub-img-wrap {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    max-height: 140px;
-  }
-
-  .project-card__sub-img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-  }
-
-  .project-card__content {
-    padding: 2.5rem;
-    border-left: 4px solid #1a2634;
-  }
-
-  .project-card__brand-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-  }
-
-  .project-type-tag {
-    font-family: var(--font-heading);
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #dc2626;
-    letter-spacing: 0.05em;
-  }
-
-  .project-brand-box img {
-    max-height: 28px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  .project-card__title {
-    font-size: 1.85rem;
-    font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1.25;
-    margin-bottom: 1rem;
-  }
-
-  .project-card__desc {
-    font-size: 1rem;
-    color: #475569;
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
-  }
-
-  .project-highlights {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .project-highlights h4 {
-    font-size: 0.85rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
-
-  .project-highlights ul {
-    margin: 0;
-    padding-left: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .project-highlights li {
-    font-size: 0.88rem;
-    color: #334155;
-  }
-
-  /* PORTFOLIO CTA */
-  .portfolio-cta {
-    padding: 0 0 5rem;
-  }
-
-  .cta-box {
-    background: linear-gradient(135deg, #1a2634 0%, #2c3e50 100%);
-    border-radius: 16px;
-    padding: 3rem;
-    text-align: center;
-    color: #ffffff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border-top: 4px solid #dc2626;
-  }
-
-  .cta-box h2 {
-    color: #ffffff;
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 0.85rem;
-  }
-
-  .cta-box p {
-    max-width: 650px;
-    margin: 0 auto 2rem;
-    color: #cbd5e1;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-
-  .cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .btn-outline-white {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.95rem 1.75rem;
-    color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .btn-outline-white:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: #ffffff;
-    color: #ffffff;
-  }
-
+  /* RESPONSIVE */
   @media (max-width: 900px) {
-    .yt-card {
-      flex-direction: column;
-      text-align: center;
-      padding: 1.75rem 1.5rem;
-    }
-    .project-card__grid,
-    .project-card__grid--reverse {
+    .portfolio-grid {
       grid-template-columns: 1fr;
-    }
-    .project-card__grid--reverse .project-card__images {
-      order: 1;
-    }
-    .project-card__grid--reverse .project-card__content {
-      order: 2;
-    }
-    .project-card__content {
-      padding: 1.75rem;
-      border-left: none;
-      border-top: 4px solid #1a2634;
-      min-width: 0;
-    }
-    .project-card__images {
-      min-width: 0;
-    }
-    .cta-box {
-      padding: 2.25rem 1.75rem;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .page-hero {
-      padding: 2.75rem 0 2rem;
-    }
-    .page-hero__title {
-      font-size: 2.15rem;
-    }
-    .page-hero__desc {
-      font-size: 0.95rem;
-    }
-
-    .yt-card {
-      padding: 1.35rem 1.15rem;
-      gap: 1rem;
-    }
-    .yt-title {
-      font-size: 1.2rem;
-    }
-    .yt-desc {
-      font-size: 0.9rem;
-    }
-    .yt-card__action,
-    .yt-btn {
-      width: 100%;
-      justify-content: center;
-    }
-
-    .portfolio-section {
-      padding: 2rem 0 3.5rem;
-    }
-    .portfolio-list {
       gap: 2rem;
     }
-    .project-card {
-      min-width: 0;
+    .portfolio-card__photo-frame {
+      height: 300px;
     }
-    .project-card__images {
-      padding: 1rem;
-    }
-    .project-card__img {
-      height: 220px;
-    }
-    .project-card__content {
-      padding: 1.25rem 1rem;
-    }
-    .project-card__title {
-      font-size: 1.35rem;
-    }
-    .project-card__desc {
-      font-size: 0.92rem;
-      margin-bottom: 1.25rem;
-    }
-    .project-highlights {
-      padding: 0.85rem 1rem;
-      margin-bottom: 1.25rem;
-    }
-    .project-highlights li {
-      font-size: 0.85rem;
-    }
-    .project-card__action :global(.wa-btn) {
-      width: 100%;
-    }
-
-    .portfolio-cta {
-      padding: 0 0 3.5rem;
-    }
-    .cta-box {
-      padding: 2rem 1.25rem;
-      border-radius: 12px;
-    }
-    .cta-box h2 {
-      font-size: 1.45rem;
-    }
-    .cta-box p {
-      font-size: 0.92rem;
-      margin-bottom: 1.5rem;
-    }
-    .cta-buttons {
+    .yt-banner__container {
       flex-direction: column;
-      width: 100%;
-    }
-    .cta-buttons :global(.wa-btn),
-    .cta-buttons .btn-outline-white {
-      width: 100%;
-      justify-content: center;
       text-align: center;
+      gap: 1.5rem;
+    }
+    .yt-banner {
+      padding: 2rem 1.5rem;
     }
   }
 
-  @media (max-width: 380px) {
-    .page-hero__title {
-      font-size: 1.85rem;
+  @media (max-width: 640px) {
+    .page-title {
+      font-size: 2.25rem;
     }
-    .project-card__title {
-      font-size: 1.25rem;
+    .portfolio-card__photo-frame {
+      height: 220px;
     }
-    .project-card__img {
-      height: 180px;
+    .portfolio-card__body {
+      padding: 1.5rem 1.25rem;
+    }
+    .portfolio-card__heading {
+      font-size: 1.35rem;
+    }
+    .yt-banner__text {
+      font-size: 1.2rem;
+    }
+    .yt-btn {
+      width: 100%;
     }
   }
 </style>

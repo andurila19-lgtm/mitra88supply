@@ -11,7 +11,7 @@ const { currentPath = '/' } = Astro.props;
 const navItems = [
   { label: 'Tentang Kami', href: '/' },
   { label: 'Layanan', href: '/layanan' },
-  { label: 'Portofolio Project', href: '/porto-folio-project' },
+  { label: 'Porto Folio Project', href: '/porto-folio-project' },
   { label: 'Hubungi Kami', href: '/hubungi-kami' },
 ];
 
@@ -109,8 +109,7 @@ const activeHref = normalizePath(currentPath);
       </nav>
 
       <div class="mobile-drawer__footer">
-        <p class="mobile-drawer__contact-label">Konsultasi Gratis Langsung:</p>
-        <WhatsAppButton variant="large" text="Chat WhatsApp (0813-22090199)" class="w-full" />
+        <WhatsAppButton variant="large" text="Chat WA" class="w-full" />
       </div>
     </div>
   </div>

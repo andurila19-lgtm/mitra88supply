@@ -12,7 +12,7 @@ interface Props {
 
 const {
   title,
-  description = 'MITRA88 SUPPLY - Reseller & Applicator plafon akustik (acoustic ceiling), metal ceiling, dan gypsum modern. Melayani material berkualitas dan jasa pemasangan profesional.',
+  description = 'MITRA88 SUPPLY merupakan badan usaha yang berfokus pada solusi ceiling (plafon) modern. Kami melayani sebagai reseller material plafon akustik (acoustic ceiling), metal ceiling, gypsum, serta menyediakan jasa pemasangan profesional untuk berbagai skala proyek.',
   currentPath = Astro.url.pathname,
 } = Astro.props;
 
@@ -32,7 +32,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://mitra88supply.com');
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/poster-hero.jpg" />
+    <meta property="og:image" content="/images/poster-hero.webp" />
     <meta property="og:site_name" content="MITRA88 SUPPLY" />
 
     <!-- Google Fonts: DM Sans & Lato -->
@@ -44,7 +44,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://mitra88supply.com');
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/icon-wa.png" />
+    <link rel="icon" type="image/webp" href="/images/icon-wa.webp" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Loncat ke konten utama</a>
@@ -58,6 +58,6 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://mitra88supply.com');
     <Footer />
 
     <!-- Global Floating WhatsApp CTA Button -->
-    <WhatsAppButton variant="floating" text="Chat WA 0813-22090199" />
+    <WhatsAppButton variant="floating" text="Chat WA" />
   </body>
 </html>

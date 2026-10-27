@@ -9,13 +9,12 @@ interface Props {
 const {
   text = 'Chat WA',
   variant = 'primary',
-  message = 'Halo Mitra 88 Supply, saya ingin info detail dan harga produk ceiling...',
+  message = '',
   class: className = ''
 } = Astro.props;
 
 const phone = '6281322090199';
-const encodedMessage = encodeURIComponent(message);
-const waUrl = `https://wa.me/${phone}?text=${encodedMessage}`;
+const waUrl = message ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}` : `https://wa.me/${phone}`;
 ---
 
 <a
