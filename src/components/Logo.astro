@@ -9,12 +9,15 @@ const { variant = 'header', class: className = '' } = Astro.props;
 
 <a href="/" class={`brand-logo brand-logo--${variant} ${className}`} aria-label="Mitra 88 Supply - Tentang Kami">
   <div class="brand-logo__mark" aria-hidden="true">
-    <svg viewBox="0 0 42 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-logo__svg">
-      <!-- Inverted faceted geometric triangle mark -->
-      <polygon points="0,2 21,36 14,2" fill="#1e293b" />
-      <polygon points="14,2 21,36 42,2" fill="#dc2626" />
-      <polygon points="0,2 21,36 42,2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.5" />
-    </svg>
+    <img
+      src="/images/logo-mark.webp"
+      alt="Logo Mitra 88 Supply"
+      width="184"
+      height="112"
+      loading="eager"
+      decoding="async"
+      class="brand-logo__img"
+    />
   </div>
   <div class="brand-logo__text">
     <span class="brand-logo__name">MITRA88 SUPPLY</span>
@@ -44,15 +47,19 @@ const { variant = 'header', class: className = '' } = Astro.props;
     align-items: center;
   }
 
+  .brand-logo__img,
   .brand-logo__svg {
-    width: 38px;
-    height: 32px;
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.08));
   }
 
+  .brand-logo--large .brand-logo__img,
   .brand-logo--large .brand-logo__svg {
-    width: 52px;
-    height: 44px;
+    height: 46px;
+    width: auto;
   }
 
   .brand-logo__text {
@@ -102,9 +109,10 @@ const { variant = 'header', class: className = '' } = Astro.props;
     .brand-logo {
       gap: 0.6rem;
     }
+    .brand-logo__img,
     .brand-logo__svg {
-      width: 32px;
-      height: 27px;
+      height: 28px;
+      width: auto;
     }
     .brand-logo__name {
       font-size: 1.05rem;
